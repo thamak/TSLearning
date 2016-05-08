@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/coverage
+/public/javascripts/myapp.min.js.map
+/src/app/entities/greeter.js.map
+/src/app/entities/greeter.js

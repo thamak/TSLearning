@@ -24,7 +24,7 @@
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <ProjectView>ShowAllFiles</ProjectView>
     <NodejsPort>1337</NodejsPort>
-    <StartWebBrowser>true</StartWebBrowser>
+    <StartWebBrowser>True</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -394,6 +394,7 @@
       node_modules\to-arraybuffer;
       node_modules\token-stream;
       node_modules\trim-newlines;
+      node_modules\tslint-microsoft-contrib;
       node_modules\tty-browserify;
       node_modules\type-check;
       node_modules\type-detect;
@@ -428,38 +429,41 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="gulpfile - Copy.js" />
-    <Compile Include="gulpfile.config.js" />
     <Compile Include="gulpfile.js" />
-    <Compile Include="_gulpfile.js" />
-    <Compile Include="src\js\index.js" />
-    <Compile Include="src\js\users.js" />
+    <Compile Include="public\javascripts\myapp.min.js" />
+    <Compile Include="src\routes\index.js" />
+    <Compile Include="src\routes\users.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
-    <Content Include="tsconfig.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
-    <Content Include="tslint.json" />
     <Content Include="src\views\layout.pug" />
     <Content Include="src\views\error.pug" />
     <Content Include="src\views\index.pug" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="public\libs\" />
-    <Folder Include="src\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
+    <Folder Include="src\" />
     <Folder Include="src\app\" />
-    <Folder Include="src\js\" />
+    <Folder Include="src\app\entities\" />
+    <Folder Include="src\routes\" />
     <Folder Include="src\test\" />
-    <Folder Include="typings\" />
     <Folder Include="src\views\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\app\test.ts" />
+    <TypeScriptCompile Include="src\app\main.ts" />
+    <TypeScriptCompile Include="src\app\entities\greeter.d.ts" />
+    <TypeScriptCompile Include="src\app\entities\greeter.ts" />
+    <TypeScriptCompile Include="src\app\entities\interfaces.d.ts" />
+    <TypeScriptCompile Include="src\test\greeter.test.ts" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
