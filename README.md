@@ -19,5 +19,5 @@ A simple Node.js, Typescript, Gulp project to start learning these technologies 
 - Launch the server
 
   ```
-   F5 on VS2015 or Run task default
+   Run task "default" or F5 on Visual Studio 2015
   ```
