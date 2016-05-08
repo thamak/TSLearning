@@ -247,3 +247,6 @@ ModelManifest.xml
 /public/javascripts/myapp.min.js.map
 /src/app/entities/greeter.js.map
 /src/app/entities/greeter.js
+/typings
+/src/app/main.js.map
+/src/app/main.js
