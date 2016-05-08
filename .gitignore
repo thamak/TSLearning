@@ -250,3 +250,10 @@ ModelManifest.xml
 /typings
 /src/app/main.js.map
 /src/app/main.js
+/data
+/src/app/database/db.js.map
+/src/app/database/db.js
+/src/app/index2.js.map
+/src/app/index2.js
+/src/test/greeter.test.js.map
+/src/test/greeter.test.js

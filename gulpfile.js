@@ -1,6 +1,7 @@
 ﻿/// <binding BeforeBuild='ts-lint, build' AfterBuild='test, bundle' />
 "use strict";
 
+
 //******************************************************************************
 //* Paths
 //******************************************************************************
@@ -40,8 +41,10 @@ var gulp = require("gulp"),
 	uglify = require("gulp-uglify"),
 	runSequence = require("run-sequence"),
 	mocha = require("gulp-mocha"),
+	babel = require('gulp-babel'),
 	istanbul = require("gulp-istanbul"),
-    browserSync = require('browser-sync').create();
+	browserSync = require('browser-sync').create();
+
 
 //******************************************************************************
 //* LINT
@@ -105,7 +108,8 @@ gulp.task("istanbul:hook", function () {
 
 gulp.task("test", ["istanbul:hook"], function () {
 	return gulp.src('src/test/**/*.test.js')
-        .pipe(mocha({ ui: 'bdd' }))
+		//.pipe(babel())
+        .pipe(mocha({ ui: 'bdd'	}))
         .pipe(istanbul.writeReports());
 });
 

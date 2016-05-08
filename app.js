@@ -8,6 +8,11 @@ var bodyParser = require('body-parser');
 var routes = require('./src/routes/index');
 var users = require('././src/routes/users');
 
+// db definition
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/tsdb');
+
 var app = express();
 
 // view engine setup
@@ -22,6 +27,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Make our db accessible to our router
+app.use(function (req, res, next) {
+	req.db = db;
+	next();
+});
 
 app.use('/', routes);
 app.use('/users', users);
