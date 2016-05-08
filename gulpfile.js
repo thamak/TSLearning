@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='ts-lint, build' AfterBuild='test, bundle' />
+﻿/// <binding />
 "use strict";
 
 
@@ -41,7 +41,6 @@ var gulp = require("gulp"),
 	uglify = require("gulp-uglify"),
 	runSequence = require("run-sequence"),
 	mocha = require("gulp-mocha"),
-	babel = require('gulp-babel'),
 	istanbul = require("gulp-istanbul"),
 	browserSync = require('browser-sync').create();
 
@@ -107,9 +106,12 @@ gulp.task("istanbul:hook", function () {
 });
 
 gulp.task("test", ["istanbul:hook"], function () {
+	// need file .babelrc with "presets": ["es2015"]
+	require("babel-core/register");
 	return gulp.src('src/test/**/*.test.js')
-		//.pipe(babel())
-        .pipe(mocha({ ui: 'bdd'	}))
+        .pipe(mocha({
+			ui: 'bdd'
+		}))
         .pipe(istanbul.writeReports());
 });
 
